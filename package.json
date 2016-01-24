@@ -15,6 +15,13 @@
     "react-dom": "~0.14.6",
     "react": "~0.14.6",
     "gulp-open": "~1.0.0",
-    "gulp-connect": "~2.3.1"
+    "gulp-connect": "~2.3.1",
+    "browserify": "~13.0.0",
+    "jquery": "~2.2.0",
+    "bootstrap": "~3.3.6",
+    "gulp-concat": "~2.6.0",
+    "gulp-eslint": "~1.1.1",
+    "react-router": "~2.0.0-rc5",
+    "flux": "~2.1.1"
   }
 }
