@@ -1,0 +1,20 @@
+{
+  "name": "MESA_COnnect",
+  "version": "0.0.1",
+  "description": "MESA_Connect application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "MESA"
+  ],
+  "author": "David Ly",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "react-dom": "~0.14.6",
+    "react": "~0.14.6",
+    "gulp-open": "~1.0.0",
+    "gulp-connect": "~2.3.1"
+  }
+}
