@@ -1,6 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
+var sass = require('gulp-sass');
 var connect = require('gulp-connect'); //Runs a local dev server
 var open = require('gulp-open'); //Open a URL in a web browser
 var browserify = require('browserify');
@@ -20,6 +21,7 @@ var config = {
       'node_modules/bootstrap/dist/css/bootstrap.min.css',
       'node_modules/bootstrap/dist/css/bootstrap-theme.min.css'
     ],
+    sass: './src/main.scss',
     mainJS: './src/main.js',
     dist: './dist',
   }
@@ -59,8 +61,19 @@ gulp.task('js', function(){
 gulp.task('css', function(){
   gulp.src(config.paths.css)
     .pipe(concat('bundle.css'))
-    .pipe(gulp.dest(config.paths.dist+'/css'));
+    .pipe(gulp.dest(config.paths.dist + '/css'));
 });
+
+// TODO: minify
+gulp.task('sass',function(){
+  gulp.src(config.paths.sass)
+    .pipe(sass({
+      includePaths: ['./src','node_modules/bootstrap-sass/assets/stylesheets/']
+    }))
+    // .pipe(sass().on('error',sass.logError))
+    .pipe(concat('app_scss.css'))
+    .pipe(gulp.dest(config.paths.dist + '/css'));
+  });
 
 gulp.task('lint', function(){
   return gulp.src(config.paths.js)
@@ -71,6 +84,7 @@ gulp.task('lint', function(){
 gulp.task('watch', function(){
   gulp.watch(config.paths.html, ['html']);
   gulp.watch(config.paths.js, ['js', 'lint']);
+  gulp.watch(config.paths.sass,['sass']);
 });
 
-gulp.task('default', ['html', 'js', 'css', 'lint', 'open', 'watch']);
+gulp.task('default', ['html', 'js', 'css','sass', 'lint', 'open', 'watch']);
