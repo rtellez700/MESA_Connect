@@ -1,5 +1,84 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
-.hello{
-	color: white;
+body{
+	padding-top: $navbar-height;
+}
+
+.container{
+	&-fluid{
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.navbar{
+	&-brand{
+		padding: 0;
+		margin: 0;
+	}
+	&-default{
+		// background-color: white;
+		// border-color: transparent;
+
+		& .navbar-toggle{
+			border-color: #419798;
+			color: #419798;
+			font-weight: bold;
+		}
+		& .navbar-toggle:hover, & .navbar-toggle:focus{
+			background-color: #419798;
+			color: white;
+		}
+	}
+	& ul a{
+		font-size: 1.4em;
+		font-weight: 400;
+	}
+}
+
+.grid{
+	&__container{
+
+		&--hr-btm{
+			border-bottom: 1px solid #d2d2d2;
+			box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+			z-index: 5;
+			position: relative;
+		}
+		&--bg-white{
+			background-color: #fff;
+		}
+		&--bg-grey{
+			background-color: #EDEFED;
+		}
+		&--bg-light-blue{
+			background-color: #419798;
+		}
+	}
+	&__wrapper{
+		padding-top: 62px;
+		padding-bottom: 32px;
+	}
+
+	&__row{
+		// add padding
+		&--same-height{
+			display: flex;
+		}
+	}
+
+	&__col{
+		margin-bottom: 7.5px;
+		&--bg-white{
+			background: #fff;
+		}
+	}
+
+	&__thumbnail{
+		& > img{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
 }

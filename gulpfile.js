@@ -68,7 +68,7 @@ gulp.task('css', function(){
 gulp.task('sass',function(){
   gulp.src(config.paths.sass)
     .pipe(sass({
-      includePaths: ['./src','node_modules/bootstrap-sass/assets/stylesheets/']
+      includePaths: ['./src','node_modules/bootstrap-sass/assets/stylesheets/','node_modules/bootstrap-sass/assets/stylesheets/bootstrap/**/*.scss']
     }))
     // .pipe(sass().on('error',sass.logError))
     .pipe(concat('app_scss.css'))
